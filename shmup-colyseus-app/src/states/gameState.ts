@@ -1,13 +1,10 @@
-import {Player} from "../entities"
+import {PlayerData, EnemyData, BulletData} from "../entities"
 import {Schema, type, MapSchema, ArraySchema} from "@colyseus/schema"
 
 export class GameState extends Schema
 {
-    @type({map: Player})
-    // players: MapSchema<Player> = new MapSchema<Player>();
-    players: MapSchema<Player> = new MapSchema<Player>();
+    @type({map: PlayerData})
+    players: MapSchema<PlayerData> = new MapSchema<PlayerData>();
 
-    @type("string")
-    phase: String = "Waiting";
-    
+    //TODO: Add other entities
 }
